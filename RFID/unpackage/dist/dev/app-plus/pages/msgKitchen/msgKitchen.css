@@ -1,0 +1,38 @@
+/* 水平间距 */
+/* 水平间距 */
+body[data-v-4ff3eef5] {
+  line-height: 1.5;
+}
+
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.layout[data-v-4ff3eef5] {
+  background: linear-gradient(to bottom, #d0f78d, #f7f8fa);
+  height: 100%;
+  padding: 1.5625rem;
+  font-weight: 500;
+  line-height: 30px;
+}
+.layout .title[data-v-4ff3eef5] {
+  font-size: 20px;
+  margin-bottom: 0.625rem;
+}
+.layout .box[data-v-4ff3eef5] {
+  border-radius: 0.46875rem;
+  overflow: hidden;
+}
+.layout .box .pic uni-image[data-v-4ff3eef5] {
+  width: 100%;
+}
+.layout .text[data-v-4ff3eef5] {
+  padding: 0.9375rem;
+}

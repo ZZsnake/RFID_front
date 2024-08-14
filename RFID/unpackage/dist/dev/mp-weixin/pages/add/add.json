@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "添加注册人员",
+  "usingComponents": {
+    "uni-data-select": "../../uni_modules/uni-data-select/components/uni-data-select/uni-data-select",
+    "uni-grid": "../../uni_modules/uni-grid/components/uni-grid/uni-grid",
+    "uni-icons": "../../uni_modules/uni-icons/components/uni-icons/uni-icons"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="layout data-v-1d3fead5"><view class="title data-v-1d3fead5">入户RFID检测区</view><view class="box data-v-1d3fead5"><view class="pic data-v-1d3fead5"><image class="data-v-1d3fead5" src="{{a}}" mode="widthFix"></image></view></view><view class="text data-v-1d3fead5">未登记人员欲开门，权限未通过</view></view>

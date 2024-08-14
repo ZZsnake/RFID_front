@@ -1,0 +1,56 @@
+/* 水平间距 */
+/* 水平间距 */
+body[data-v-4c1b26cf] {
+  line-height: 1.5;
+}
+
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+@font-face {
+  font-family: CustomFont;
+  src: url("./iconfont.ttf");
+}
+.messageCenter[data-v-4c1b26cf] {
+  background: linear-gradient(to bottom, #d0f78d, #f7f8fa);
+  height: 100%;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.messageCenter .messages[data-v-4c1b26cf] {
+  padding: 0.3125rem;
+  margin-left: 0.3125rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.3125rem;
+  margin-top: 0.46875rem;
+  margin-bottom: 0.46875rem;
+}
+.messageCenter .messages .msg[data-v-4c1b26cf] {
+  padding: 0.375rem;
+  display: flex;
+  flex-direction: column;
+}
+.messageCenter .messages .msg .up[data-v-4c1b26cf] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #cfcfcf;
+}
+.messageCenter .messages .msg .up .time[data-v-4c1b26cf] {
+  margin-left: 0.3125rem;
+  font-size: 0.78125rem;
+}
+.messageCenter .messages .msg .down .content[data-v-4c1b26cf] {
+  font-size: 0.875rem;
+  color: #666;
+}

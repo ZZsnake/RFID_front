@@ -1,0 +1,132 @@
+/* 水平间距 */
+/* 水平间距 */
+page.data-v-2f1ef635 {
+  line-height: 1.5;
+}
+iui-space.data-v-2f1ef635 {
+  width: 100%;
+}
+iui-button.data-v-2f1ef635,
+iui-grid-item.data-v-2f1ef635,
+iui-cell.data-v-2f1ef635,
+iui-checkbox.data-v-2f1ef635,
+iui-radio.data-v-2f1ef635,
+iui-swiper.data-v-2f1ef635,
+iui-image.data-v-2f1ef635,
+iui-icon.data-v-2f1ef635 {
+  display: contents;
+}
+iui-picker.data-v-2f1ef635 .iui-popup-container-content {
+  background-color: var(--iui-mp-picker-title-bg) !important;
+}
+@media (prefers-color-scheme: dark) {
+picker-view-column.data-v-2f1ef635 {
+    background-color: var(--iui-bg-secondary) !important;
+}
+}
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.container.data-v-2f1ef635 {
+  background: linear-gradient(to bottom, #d0f78d, #f7f8fa);
+  height: 100%;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.container .user.data-v-2f1ef635 {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.container .user .userName.data-v-2f1ef635 {
+  display: flex;
+  flex-direction: column;
+  font-size: 40rpx;
+}
+.container .user .userName .detail.data-v-2f1ef635 {
+  margin-top: 20rpx;
+  padding: 10rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 20rpx;
+  font-weight: 300;
+  border-radius: 15rpx;
+}
+.container .user .userImg.data-v-2f1ef635 {
+  position: absolute;
+  right: 40rpx;
+  width: 180rpx;
+  border-radius: 100rpx;
+}
+.container .familyBox.data-v-2f1ef635 {
+  margin-top: 50rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.container .familyBox .detail.data-v-2f1ef635 {
+  font-size: 20rpx;
+  font-weight: 300;
+}
+.container .familyBox .family.data-v-2f1ef635 {
+  background-color: #f7f8fa;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cfcfcf;
+  border-radius: 20rpx;
+}
+.container .familyBox .family .member.data-v-2f1ef635 {
+  padding: 10rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #cfcfcf;
+}
+.container .familyBox .family .member .memberImg.data-v-2f1ef635 {
+  width: 75rpx;
+  margin-left: 400rpx;
+  border: 1px solid #cfcfcf;
+  border-radius: 20rpx;
+}
+.container .setting.data-v-2f1ef635 {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+}
+.container .setting .left.data-v-2f1ef635 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.container .exit.data-v-2f1ef635 {
+  margin-bottom: 20rpx;
+  padding: 15rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  /* 设置元素为固定定位 */
+  bottom: 0;
+  /* 距离底部为 0 */
+  width: 88%;
+  /* 宽度占满容器 */
+  background-color: #ffffff;
+  border-radius: 15rpx;
+  border: 1px solid #cfcfcf;
+}

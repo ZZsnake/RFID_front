@@ -1,0 +1,1 @@
+<view><text wx:if="{{a}}">{{b}}</text></view>

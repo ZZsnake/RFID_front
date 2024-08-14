@@ -1,0 +1,58 @@
+/* 水平间距 */
+/* 水平间距 */
+page.data-v-f9470df8 {
+  line-height: 1.5;
+}
+iui-space.data-v-f9470df8 {
+  width: 100%;
+}
+iui-button.data-v-f9470df8,
+iui-grid-item.data-v-f9470df8,
+iui-cell.data-v-f9470df8,
+iui-checkbox.data-v-f9470df8,
+iui-radio.data-v-f9470df8,
+iui-swiper.data-v-f9470df8,
+iui-image.data-v-f9470df8,
+iui-icon.data-v-f9470df8 {
+  display: contents;
+}
+iui-picker.data-v-f9470df8 .iui-popup-container-content {
+  background-color: var(--iui-mp-picker-title-bg) !important;
+}
+@media (prefers-color-scheme: dark) {
+picker-view-column.data-v-f9470df8 {
+    background-color: var(--iui-bg-secondary) !important;
+}
+}
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.layout.data-v-f9470df8 {
+  background: linear-gradient(to bottom, #d0f78d, #f7f8fa);
+  height: 100%;
+  padding: 50rpx;
+  font-weight: 500;
+  line-height: 30px;
+}
+.layout .title.data-v-f9470df8 {
+  font-size: 20px;
+  margin-bottom: 20rpx;
+}
+.layout .box.data-v-f9470df8 {
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+.layout .box .pic image.data-v-f9470df8 {
+  width: 100%;
+}
+.layout .text.data-v-f9470df8 {
+  padding: 30rpx;
+}

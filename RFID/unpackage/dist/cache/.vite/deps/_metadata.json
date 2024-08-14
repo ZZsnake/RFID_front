@@ -1,0 +1,15 @@
+{
+  "hash": "87832c42",
+  "configHash": "d2e08c49",
+  "lockfileHash": "416cecb5",
+  "browserHash": "fb34dce6",
+  "optimized": {
+    "@hyoga/uni-socket.io": {
+      "src": "../../../../../node_modules/@hyoga/uni-socket.io/dist/uni-socket.io.js",
+      "file": "@hyoga_uni-socket__io.js",
+      "fileHash": "c7234630",
+      "needsInterop": true
+    }
+  },
+  "chunks": {}
+}

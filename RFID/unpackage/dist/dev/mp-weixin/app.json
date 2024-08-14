@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/device/device",
+    "pages/my/my",
+    "pages/message/message",
+    "pages/msgDoor/msgDoor",
+    "pages/msgKitchen/msgKitchen",
+    "pages/msgToilet/msgToilet",
+    "pages/msgCloseDoor/msgCloseDoor",
+    "pages/add/add",
+    "pages/test/test",
+    "pages/webtest/webtest",
+    "pages/msgKitchenOut/msgKitchenOut",
+    "pages/msgToiletIn/msgToiletIn",
+    "pages/msgToiletOut/msgToiletOut"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#27BA9B",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tab/home.png",
+        "selectedIconPath": "static/tab/home (1).png"
+      },
+      {
+        "pagePath": "pages/device/device",
+        "text": "设备",
+        "iconPath": "static/tab/device.png",
+        "selectedIconPath": "static/tab/device (1).png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/tab/people.png",
+        "selectedIconPath": "static/tab/people (1).png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

@@ -62,7 +62,8 @@
 
 <script>
   import io from '@hyoga/uni-socket.io';
-    import { ref } from "vue";
+  import { ref } from "vue";
+  import { setupWebSocket } from '@/utils/websocket.js';
   
     export default {
       data() {
@@ -125,54 +126,72 @@
 		  // 更新最新的两条消息
 		  this.latestMessages = messages.slice(-2).reverse();
         },
-        setupWebSocket() {
-          const socket = io('ws://122.9.40.140:5001', {
-            transports: ['websocket', 'polling'],
-            timeout: 5000,
-          });
-  
-          socket.on('connect', () => {
-            console.log('WebSocket 已连接');
-			let messages = uni.getStorageSync('messages') || [];
-			// 更新最新的两条消息
-			this.latestMessages = messages.slice(-2).reverse();
-          });
-  
-          socket.on('update', (data) => {
-            console.log('收到服务器消息：', data);
-            this.message = data.msg;  // 更新消息
-            this.msgType = data.type;
-            this.time = data.time;
-            // 获取当前保存的消息列表
-            let messages = uni.getStorageSync('messages') || [];
-            
-            // 添加新消息到消息列表
-            messages.push({
-              msg: data.msg,
-              type: data.type,
-              time: data.time
-            });
-            
-            // 如果消息数超过50条，删除最旧的50条
-            if (messages.length > 50) {
-              messages = messages.slice(-50);
-            }
-            
-            // 将更新后的消息列表保存到本地
-            uni.setStorageSync('messages', messages);
-            
-            
-            this.toggle('top');
-          });
-  
-          socket.on('error', (err) => {
-            console.error('WebSocket 错误：', err);
-          });
-        }
-      },
-      mounted() {
+
+		// handleWebSocketMessages(messages, data) {
+		// 		this.latestMessages = messages;
+		// 		this.message = data.msg;
+		// 		this.msgType = data.type;
+		// 		this.time = data.time;
+		// 		this.toggle('top'); // 弹出弹窗提醒
+		// },
+		setupWebSocket() {
+		    const socket = io('ws://122.9.40.140:5001', {
+		      transports: ['websocket', 'polling'],
+		      timeout: 5000,
+		    });
+				
+		    socket.on('connect', () => {
+		      console.log('WebSocket 已连接');
+			  let messages = uni.getStorageSync('messages') || [];
+			  // 更新最新的两条消息
+			  this.latestMessages = messages.slice(-2).reverse();
+		    });
+				
+		    socket.on('update', (data) => {
+		      console.log('收到服务器消息：', data);
+		      this.message = data.msg;  // 更新消息
+		      this.msgType = data.type;
+		      this.time = data.time;
+			  // 获取当前保存的消息列表
+			  let messages = uni.getStorageSync('messages') || [];
+			  if(data.type==8){
+				  // Clear the local cache for messages
+				  uni.clearStorageSync('messages');
+				  console.log('Local cache cleared.');
+				  messages = uni.getStorageSync('messages') || [];
+				  console.log(messages);
+				  // 更新最新的两条消息
+				  this.latestMessages = messages.slice(-2).reverse();
+			  }else{
+				  
+				  // 添加新消息到消息列表
+				  messages.push({
+				    msg: data.msg,
+				    type: data.type,
+				    time: data.time
+				  });
+				  
+				  // 如果消息数超过50条，删除最旧的50条
+				  if (messages.length > 50) {
+				    messages = messages.slice(-50);
+				  }
+				  
+			  }
+			  // 将更新后的消息列表保存到本地
+			  uni.setStorageSync('messages', messages);
+		      this.toggle('top');
+		    });
+				
+		    socket.on('error', (err) => {
+		      console.error('WebSocket 错误：', err);
+		    });
+		  }
+		},
+    mounted() {
         this.setupWebSocket();
-      }
+		// 使用全局 WebSocket 设置方法
+		// this.$setupWebSocket(this.handleWebSocketMessages);
+      },
     };
 </script>
 <style lang="scss" scoped>

@@ -60,6 +60,13 @@ const _sfc_main = {
       let messages = common_vendor.index.getStorageSync("messages") || [];
       this.latestMessages = messages.slice(-2).reverse();
     },
+    // handleWebSocketMessages(messages, data) {
+    // 		this.latestMessages = messages;
+    // 		this.message = data.msg;
+    // 		this.msgType = data.type;
+    // 		this.time = data.time;
+    // 		this.toggle('top'); // 弹出弹窗提醒
+    // },
     setupWebSocket() {
       const socket = common_vendor.io("ws://122.9.40.140:5001", {
         transports: ["websocket", "polling"],
@@ -76,13 +83,21 @@ const _sfc_main = {
         this.msgType = data.type;
         this.time = data.time;
         let messages = common_vendor.index.getStorageSync("messages") || [];
-        messages.push({
-          msg: data.msg,
-          type: data.type,
-          time: data.time
-        });
-        if (messages.length > 50) {
-          messages = messages.slice(-50);
+        if (data.type == 8) {
+          common_vendor.index.clearStorageSync("messages");
+          console.log("Local cache cleared.");
+          messages = common_vendor.index.getStorageSync("messages") || [];
+          console.log(messages);
+          this.latestMessages = messages.slice(-2).reverse();
+        } else {
+          messages.push({
+            msg: data.msg,
+            type: data.type,
+            time: data.time
+          });
+          if (messages.length > 50) {
+            messages = messages.slice(-50);
+          }
         }
         common_vendor.index.setStorageSync("messages", messages);
         this.toggle("top");

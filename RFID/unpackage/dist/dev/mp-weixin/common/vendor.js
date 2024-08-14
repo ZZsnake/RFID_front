@@ -10140,12 +10140,6 @@ const pages = [
     }
   },
   {
-    path: "pages/test/test",
-    style: {
-      navigationBarTitleText: ""
-    }
-  },
-  {
     path: "pages/webtest/webtest",
     style: {
       navigationBarTitleText: ""

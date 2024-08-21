@@ -15,6 +15,7 @@ if (!Math) {
   "./pages/msgKitchenOut/msgKitchenOut.js";
   "./pages/msgToiletIn/msgToiletIn.js";
   "./pages/msgToiletOut/msgToiletOut.js";
+  "./pages/progress/progress.js";
 }
 const _sfc_main = {
   onLaunch: function() {

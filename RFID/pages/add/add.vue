@@ -72,7 +72,7 @@
 				</view>
 				
 			</view>
-			<view class="start">
+			<view class="start" @click="goto('/pages/progress/progress')">
 				<text style="color: aliceblue;">开始录入</text>
 			</view>
 		</view>
@@ -100,6 +100,11 @@
       };
     },
     methods: {
+	  goto(url) {
+	    uni.navigateTo({
+	      url: url
+	    });
+	  },
       change1(e) {
         console.log("e:", e);
       },

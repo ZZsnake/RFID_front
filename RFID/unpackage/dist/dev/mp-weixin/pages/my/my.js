@@ -1,11 +1,17 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const sharedData = require("../../sharedData.js");
 const common_assets = require("../../common/assets.js");
 const _sfc_main = {
   data() {
     return {};
   },
   methods: {
+    toggleStatus() {
+      console.log(sharedData.sharedData.getStatus());
+      sharedData.sharedData.toggleStatus();
+      console.log(sharedData.sharedData.getStatus());
+    },
     goto(url) {
       common_vendor.index.navigateTo({
         url
@@ -35,7 +41,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       type: "gear",
       size: "18"
     }),
-    g: common_assets._imports_4
+    g: common_assets._imports_4,
+    h: common_vendor.o(($event) => $options.toggleStatus())
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-2f1ef635"]]);

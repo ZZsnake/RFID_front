@@ -10162,6 +10162,12 @@ const pages = [
     style: {
       navigationBarTitleText: ""
     }
+  },
+  {
+    path: "pages/progress/progress",
+    style: {
+      navigationBarTitleText: "入户RFID检测区"
+    }
   }
 ];
 const globalStyle = {

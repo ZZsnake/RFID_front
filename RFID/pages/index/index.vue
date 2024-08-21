@@ -61,6 +61,7 @@
 </template>
 
 <script>
+  import sharedData from '@/sharedData.js'; // 导入共享模块
   import io from '@hyoga/uni-socket.io';
   import { ref } from "vue";
   import { setupWebSocket } from '@/utils/websocket.js';
@@ -126,16 +127,9 @@
 		  // 更新最新的两条消息
 		  this.latestMessages = messages.slice(-2).reverse();
         },
-
-		// handleWebSocketMessages(messages, data) {
-		// 		this.latestMessages = messages;
-		// 		this.message = data.msg;
-		// 		this.msgType = data.type;
-		// 		this.time = data.time;
-		// 		this.toggle('top'); // 弹出弹窗提醒
-		// },
 		setupWebSocket() {
-		    const socket = io('ws://122.9.40.140:5001', {
+		    const socket = io('ws://122.9.40.140:5000', {
+			// const socket = io('ws://127.0.0.1:5000', {
 		      transports: ['websocket', 'polling'],
 		      timeout: 5000,
 		    });
@@ -148,10 +142,17 @@
 		    });
 				
 		    socket.on('update', (data) => {
-		      console.log('收到服务器消息：', data);
-		      this.message = data.msg;  // 更新消息
-		      this.msgType = data.type;
-		      this.time = data.time;
+			  if(sharedData.getStatus()){
+				  console.log('收到服务器消息：', data);
+				  this.message = "未登记人员";  // 更新消息
+				  this.msgType = 5;
+				  this.time = data.time;
+			  }else{
+				  console.log('收到服务器消息：', data);
+				  this.message = data.msg;  // 更新消息
+				  this.msgType = data.type;
+				  this.time = data.time;
+			  }
 			  // 获取当前保存的消息列表
 			  let messages = uni.getStorageSync('messages') || [];
 			  if(data.type==8){
@@ -162,7 +163,20 @@
 				  console.log(messages);
 				  // 更新最新的两条消息
 				  this.latestMessages = messages.slice(-2).reverse();
-			  }else{
+			  }else if(sharedData.getStatus()){
+				  // 添加新消息到消息列表
+				  messages.push({
+				    msg: "未登记人员",
+				    type: 5,
+				    time: data.time
+				  });
+				  
+				  // 如果消息数超过50条，删除最旧的50条
+				  if (messages.length > 50) {
+				    messages = messages.slice(-50);
+				  }
+			  }
+			  else{
 				  
 				  // 添加新消息到消息列表
 				  messages.push({
@@ -187,10 +201,9 @@
 		    });
 		  }
 		},
-    mounted() {
+	 
+     mounted() {
         this.setupWebSocket();
-		// 使用全局 WebSocket 设置方法
-		// this.$setupWebSocket(this.handleWebSocketMessages);
       },
     };
 </script>

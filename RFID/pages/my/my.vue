@@ -35,7 +35,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="setting">
+		<view class="setting" @click="toggleStatus()">
 			<view class="left">
 				<uni-icons type="gear" size="18"></uni-icons>
 				<text style="margin-left: 10rpx;">更多设置</text>
@@ -154,6 +154,7 @@
 
 <script>
 	//import {  } from "@/common/api/{$}.js";
+	import sharedData from '@/sharedData.js'; // 导入共享模块
 	export default {
 		data() {
 			return {
@@ -161,6 +162,11 @@
 			}
 		},
 		methods: {
+			toggleStatus() {
+				console.log(sharedData.getStatus());
+				sharedData.toggleStatus(); // 切换布尔值
+				console.log(sharedData.getStatus());
+			},
 			goto(url) {
 					uni.navigateTo({
 					url:url

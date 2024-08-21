@@ -19,6 +19,11 @@ const _sfc_main = {
     };
   },
   methods: {
+    goto(url) {
+      common_vendor.index.navigateTo({
+        url
+      });
+    },
     change1(e) {
       console.log("e:", e);
     },
@@ -83,7 +88,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       type: "clear",
       size: "20",
       color: "#777"
-    })
+    }),
+    r: common_vendor.o(($event) => $options.goto("/pages/progress/progress"))
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e8d2fd40"]]);

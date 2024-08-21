@@ -2,6 +2,7 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
+import store from './store'; // 引入 Vuex
 // import { setupWebSocket } from '@./utils/websocket.js';
 
 Vue.config.productionTip = false

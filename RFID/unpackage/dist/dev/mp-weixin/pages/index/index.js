@@ -1,5 +1,6 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const sharedData = require("../../sharedData.js");
 const _sfc_main = {
   data() {
     return {
@@ -60,15 +61,9 @@ const _sfc_main = {
       let messages = common_vendor.index.getStorageSync("messages") || [];
       this.latestMessages = messages.slice(-2).reverse();
     },
-    // handleWebSocketMessages(messages, data) {
-    // 		this.latestMessages = messages;
-    // 		this.message = data.msg;
-    // 		this.msgType = data.type;
-    // 		this.time = data.time;
-    // 		this.toggle('top'); // 弹出弹窗提醒
-    // },
     setupWebSocket() {
-      const socket = common_vendor.io("ws://122.9.40.140:5001", {
+      const socket = common_vendor.io("ws://122.9.40.140:5000", {
+        // const socket = io('ws://127.0.0.1:5000', {
         transports: ["websocket", "polling"],
         timeout: 5e3
       });
@@ -78,10 +73,17 @@ const _sfc_main = {
         this.latestMessages = messages.slice(-2).reverse();
       });
       socket.on("update", (data) => {
-        console.log("收到服务器消息：", data);
-        this.message = data.msg;
-        this.msgType = data.type;
-        this.time = data.time;
+        if (sharedData.sharedData.getStatus()) {
+          console.log("收到服务器消息：", data);
+          this.message = "未登记人员";
+          this.msgType = 5;
+          this.time = data.time;
+        } else {
+          console.log("收到服务器消息：", data);
+          this.message = data.msg;
+          this.msgType = data.type;
+          this.time = data.time;
+        }
         let messages = common_vendor.index.getStorageSync("messages") || [];
         if (data.type == 8) {
           common_vendor.index.clearStorageSync("messages");
@@ -89,6 +91,15 @@ const _sfc_main = {
           messages = common_vendor.index.getStorageSync("messages") || [];
           console.log(messages);
           this.latestMessages = messages.slice(-2).reverse();
+        } else if (sharedData.sharedData.getStatus()) {
+          messages.push({
+            msg: "未登记人员",
+            type: 5,
+            time: data.time
+          });
+          if (messages.length > 50) {
+            messages = messages.slice(-50);
+          }
         } else {
           messages.push({
             msg: data.msg,

@@ -88,6 +88,13 @@
 		{
 			"navigationBarTitleText" : ""
 		}
+	},
+	{
+		"path" : "pages/progress/progress",
+		"style" : 
+		{
+			"navigationBarTitleText" : "入户RFID检测区"
+		}
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

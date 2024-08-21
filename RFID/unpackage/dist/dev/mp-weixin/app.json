@@ -12,7 +12,8 @@
     "pages/webtest/webtest",
     "pages/msgKitchenOut/msgKitchenOut",
     "pages/msgToiletIn/msgToiletIn",
-    "pages/msgToiletOut/msgToiletOut"
+    "pages/msgToiletOut/msgToiletOut",
+    "pages/progress/progress"
   ],
   "window": {
     "navigationBarTextStyle": "white",
